@@ -1,4 +1,4 @@
-package users
+package commands
 
 import (
 	"context"
@@ -6,8 +6,7 @@ import (
 	"github.com/google/go-github/v52/github"
 )
 
-func CreateRepoForUser(ctx context.Context, client *github.Client, user *github.User) error {
-	repoName := *user.Login + "github.io"
+func CreateRepoForUser(ctx context.Context, client *github.Client, user *github.User, repoName string) error {
 	repo := &github.Repository{
 		Name: github.String(repoName),
 	}

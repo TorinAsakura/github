@@ -5,13 +5,13 @@ import (
 	"github.com/google/go-github/v52/github"
 )
 
-func GetOrganizationMembers(ctx context.Context, client *github.Client, org string) ([]*github.User, error) {
-	opt := &github.ListMembersOptions{
+func GetOrganizationTeamMembers(ctx context.Context, client *github.Client, org string, teamSlug string) ([]*github.User, error) {
+	opt := &github.TeamListTeamMembersOptions{
 		ListOptions: github.ListOptions{PerPage: 10},
 	}
 	var allUsers []*github.User
 	for {
-		users, resp, err := client.Organizations.ListMembers(ctx, org, opt)
+		users, resp, err := client.Teams.ListTeamMembersBySlug(ctx, org, teamSlug, opt)
 		if err != nil {
 			return nil, err
 		}
