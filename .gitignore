@@ -1,0 +1,30 @@
+# Binaries, plugins, libs
+**/*.a
+**/*.so
+**/*.dll
+**/*.dylib
+**/*.exe
+**/*.out
+**/*.o
+**/*.test
+
+# Folders
+_obj
+_test
+vendor
+
+# Files
+*.env
+*.pem
+*.key
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# Go specific
+go.sum
+go.mod
