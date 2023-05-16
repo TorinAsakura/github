@@ -24,7 +24,3 @@ vendor
 *.iml
 *.ipr
 *.iws
-
-# Go specific
-go.sum
-go.mod
