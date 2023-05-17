@@ -39,7 +39,7 @@ func main() {
 			log.Fatalf("Could not create repository: %v", err)
 		}
 
-		content, err := fileCommands.ReadMarkdownFileFromRepo(ctx, client, cfg.GithubOrg, cfg.GithubTasksRepo, "README.md")
+		content, err := fileCommands.ReadMarkdownFileFromRepo(ctx, client.Repositories, cfg.GithubOrg, cfg.GithubTasksRepo, "README.md")
 		if err != nil {
 			log.Fatalf("Could not read file from repo: %v", err)
 		}
